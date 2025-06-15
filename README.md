@@ -1,6 +1,6 @@
 # Country Malnutrition Clustering
 
-Clustering Malnutrition in Countries using K-Means and DBHC(DBSCAN-based Hierarchical Clustering) Algorithms
+Clustering Malnutrition in Countries using K-Means and DBHC (DBSCAN-based Hierarchical Clustering) Algorithms
 
 ## Dataset
 
