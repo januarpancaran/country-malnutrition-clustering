@@ -19,7 +19,7 @@ from sklearn.preprocessing import StandardScaler
 warnings.filterwarnings("ignore")
 
 
-class NutritionClusteringAnalysis:
+class MalnutritionClusteringAnalysis:
     def __init__(self, data_path="dataset/country-wise-average.csv"):
         self.data_path = data_path
         self.df = None
@@ -805,7 +805,7 @@ class NutritionClusteringAnalysis:
 
     def run_2cluster_analysis(self):
         """Run analysis specifically for 2 clusters with visualizations"""
-        print("Starting 2-Cluster Nutrition Analysis")
+        print("Starting 2-Cluster Malnutrition Analysis")
         print("=" * 50)
 
         try:
@@ -828,7 +828,7 @@ class NutritionClusteringAnalysis:
             print("\nGenerating K-Means visualization...")
             self.plot_clustering_results_2clusters(kmeans_2_labels, "K-Means 2-Cluster")
             self.plot_with_interpretation_2clusters(
-                kmeans_2_labels, "K-Means Nutrition"
+                kmeans_2_labels, "K-Means Malnutrition"
             )
 
             # Run DBHC clustering with 2 clusters
@@ -845,7 +845,7 @@ class NutritionClusteringAnalysis:
             # Plot DBHC results
             print("\nGenerating DBHC visualization...")
             self.plot_clustering_results_2clusters(dbhc_labels, "DBHC 2-Cluster")
-            self.plot_with_interpretation_2clusters(dbhc_labels, "DBHC Nutrition")
+            self.plot_with_interpretation_2clusters(dbhc_labels, "DBHC Malnutrition")
 
             # Save results
             self.save_results(kmeans_2_labels, dbhc_labels, kmeans_2, dbhc_clusters)
@@ -888,7 +888,7 @@ class NutritionClusteringAnalysis:
 
     def run_analysis(self):
         """Main analysis pipeline with comprehensive error handling"""
-        print("Starting Nutrition Clustering Analysis")
+        print("Starting Malnutrition Clustering Analysis")
         print("=" * 50)
 
         try:
@@ -960,7 +960,7 @@ class NutritionClusteringAnalysis:
 def main():
     """Main function with comprehensive error handling"""
     try:
-        analyzer = NutritionClusteringAnalysis()
+        analyzer = MalnutritionClusteringAnalysis()
 
         # Ask user which analysis to run
         print("Choose analysis type:")

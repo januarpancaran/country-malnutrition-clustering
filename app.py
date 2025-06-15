@@ -12,11 +12,11 @@ warnings.filterwarnings("ignore")
 
 # Set page config
 st.set_page_config(
-    page_title="Nutrition Clustering Predictor", page_icon="🍎", layout="wide"
+    page_title="Malnutrition Clustering Predictor", page_icon="🍎", layout="wide"
 )
 
 
-class NutritionPredictor:
+class MalnutritionPredictor:
     def __init__(self):
         self.kmeans_model = None
         self.dbhc_clusters = None
@@ -177,7 +177,7 @@ class NutritionPredictor:
         }
 
         # Default explanation for any unexpected cluster IDs
-        default_explanation = f"Cluster {cluster_id}: Nutrition profile based on the input characteristics."
+        default_explanation = f"Cluster {cluster_id}: Malnutrition profile based on the input characteristics."
 
         # Ensure we only return explanations for clusters 0 and 1
         if cluster_id not in [0, 1]:
@@ -301,14 +301,14 @@ class NutritionPredictor:
 
 
 def main():
-    st.title("🍎 Nutrition Clustering Predictor")
+    st.title("🍎 Malnutrition Clustering Predictor")
     st.markdown("### Predict nutrition cluster based on country characteristics")
     st.info(
         "📊 **Model Overview**: This predictor classifies countries into 2 clusters based on malnutrition indicators:\n- **Cluster 0 (🔴)**: High Malnutrition\n- **Cluster 1 (🟢)**: Low Malnutrition"
     )
 
     # Initialize predictor
-    predictor = NutritionPredictor()
+    predictor = MalnutritionPredictor()
 
     # Load models
     if not predictor.load_models():
@@ -376,7 +376,7 @@ def main():
         )
 
     with col2:
-        st.subheader("Additional Nutrition Indicators")
+        st.subheader("Additional Malnutrition Indicators")
         stunting = st.number_input(
             "Stunting per capita:",
             min_value=0.0,
@@ -424,7 +424,7 @@ def main():
         )
 
     # Prediction button
-    if st.button("🔮 Predict Nutrition Cluster", type="primary"):
+    if st.button("🔮 Predict Malnutrition Cluster", type="primary"):
         # Prepare input data
         user_input = {
             "Income Classification": income_classification,
